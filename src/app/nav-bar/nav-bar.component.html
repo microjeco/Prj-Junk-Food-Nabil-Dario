@@ -1,0 +1,24 @@
+
+<div class="header">
+   
+    <div class="icon">
+        <img (mouseenter)="changeToBlood()" (mouseleave)="changeToNormal()" src="../../assets/menu-img/logo-bianco-e-nero.png" alt="logo" id="logo" routerLink="/homepage">
+    </div>
+
+    <div class="menu">
+        <div class="menuButton" matRipple [matRippleCentered]="true" routerLink="/chi-siamo"> CHI SIAMO </div>
+        <div class="menuButton" matRipple [matRippleCentered]="true" routerLink="/prodotti"> PRODOTTI </div>
+        <div class="menuButton" matRipple [matRippleCentered]="true"> CONTATTACI </div>
+        <div class="menuButton" matRipple [matRippleCentered]="true"> TROVACI </div>
+        <button routerLink="/shopping-cart" class="cart-cont" mat-fab color="black" aria-label="Example icon button with a plus one icon"> <!--(click)="drawer.toggle()"-->
+            <mat-icon class="cart" matBadge="{{productIntoCart}}" matBadgeOverlap="false">shopping_cart</mat-icon>
+        </button>
+    </div>
+
+    <!-- [matRippleCentered]="centered"
+                [matRippleDisabled]="disabled"
+                [matRippleUnbounded]="unbounded"
+                [matRippleRadius]="radius"
+                [matRippleColor]="color"> -->
+
+</div>
