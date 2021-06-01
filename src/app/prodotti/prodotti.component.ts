@@ -105,15 +105,16 @@ export class ProdottiComponent implements OnInit {
   selector: 'template-modale',
   templateUrl: 'template-modale.html',
 })
+
 export class TemplateModal {
   constructor(){
     
   }
 
-  seeDescription(prodotto: Prodotto) {
-    let divMatDialogContent = document.getElementById("descrizione") as HTMLDivElement;
-    divMatDialogContent.textContent = prodotto.getDescription();
+  // seeDescription(prodotto: Prodotto) {
+  //   let divMatDialogContent = document.getElementById("descrizione") as HTMLDivElement;
+  //   divMatDialogContent.textContent = prodotto.getDescription();
 
-  }
+  // }
 
 }
