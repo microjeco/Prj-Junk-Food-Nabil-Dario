@@ -1,4 +1,3 @@
-import { fakeObject } from './../shared/fakeObjects';
 import { ShoppingCartService } from './../services/shopping-cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Prodotto } from '../shared/Prodotto';
