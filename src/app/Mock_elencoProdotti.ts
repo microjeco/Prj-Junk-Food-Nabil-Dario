@@ -5,7 +5,7 @@ export const PRODOTTI : Prodotto[] = [
     new Prodotto(3,"panino","Loco Cheese Burger","../../assets/prodotti/panini/cheese-isolated.png",3.6, "Veramente LIGHT"),
     new Prodotto(4,"panino","Chicken Kebab","../../assets/prodotti/panini/chicken-kebab-isolated.png",3.6, "Veramente LIGHT"),
     new Prodotto(5,"panino","Double Cheese Burger","../../assets/prodotti/panini/double-cheese-isolated.png",3.6,"Veramente LIGHT"),
-    new Prodotto(6,"panino","Founders Selection Asiago","../../assets/prodotti/panini/founders-selection-asiago-isolated.png",3.6,"Veramente LIGHT"),
+    new Prodotto(6,"panino","Founders Selection Asiago","../../assets/prodotti/panini/founders-selection-asiago-isolated.png",3.6,"Veramente LIGHT, l'asiago preso dal monte dove si riposarono vacche d'oro al tramonto più ipnotico dell'anno"),
     new Prodotto(7,"panino","Founders Selection BBQ","../../assets/prodotti/panini/founders-selection-bbq-isolated.png",3.6,"Veramente LIGHT"),
     new Prodotto(8,"panino","Founders Selection Chicken","../../assets/prodotti/panini/founders-selection-chicken-isolated.png",3.6,"Veramente LIGHT"),
     new Prodotto(9,"panino","Big Chicken & Bacon","../../assets/prodotti/panini/gran-chicken-bacon-isolated.png",3.6,"Veramente INVITANTE"),
