@@ -18,9 +18,11 @@
             <div class="descrizione">
                 <div class="description">
                         
-                    <div class="real-description">
-                        <p>{{product.key.getName()}}</p> <br>
-                        <p>{{product.key.getPrice()}} €</p>
+                    <div class="nome">
+                        <p>{{product.key.getName()}}</p>
+                    </div>
+                    <div class="prezzo">
+                        <p>{{product.key.getPrice()}} €</p>                        
                     </div>
 
                     <div class="quantity-delete">
@@ -46,6 +48,14 @@
         <div class="subtotal">
             <p class="textSubtotal">TOTALE </p> 
             <p> {{calcSubtotal() | number : '1.0-2'}} €</p>  <!-- pipe per formattare adeguatamente i numeri visualizzati -->
+        </div>
+        <div class="payment-options">
+            <div class="payment-options-text">
+                ACCETTIAMO
+            </div>
+            <div class="metodi-pagamento">
+                <img id="metodi-pagamento" src="../../assets/carrello/metodi-pagamento.png" alt="metodi-pagamento">
+            </div>
         </div>
     </div>
 
