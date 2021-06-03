@@ -1,55 +1,56 @@
+<div class="container-totale">
 
-<div class="cart-container">
-    <div class="title">
-        <p class="textTitle">RIEPILOGO CARRELLO</p>
-    </div>
-    <div class="container">
-        
-        <!-- <div *ngIf = "productsCount === 0"> CART IS EMPTY </div> -->
+    <div class="sinistra">
 
-        <!-- STRANO CHE NON LO  -->
+        <div class="title">
+            <p class="textTitle">RIEPILOGO CARRELLO</p>
+        </div>
+
         <div *ngIf="productsCount === 0; then thenBlock"></div>
-        <ng-template #thenBlock>CART IS EMPTY
+            <ng-template #thenBlock>CART IS EMPTY </ng-template>
+        <div class="prodotto" *ngFor="let product of products | keyvalue">
 
-
-
-
-        </ng-template>
-    
-        <!-- div uguale ad ogni prodotto -->
-        <div *ngFor="let product of products | keyvalue">
-    
-            <div class="productContainer">
-                <div class="description">
-                    <div class="immagine-prodotto">
-                        <img src={{product.key.getBlob()}} alt="productImg"> <!--"{{product.key.getBlob()}}"-->
-                    </div>
-                    <div class="real-description">
-                        <p style="padding-top: 20px;">{{product.key.getName()}}</p> <br>
-                        <p>{{product.key.getPrice()}} $</p>
-                    </div>
+            <div class="foto">
+                <div class="immagine-prodotto">
+                    <img src={{product.key.getBlob()}} alt="productImg"> <!--"{{product.key.getBlob()}}"-->
                 </div>
-
-                <div class="quantity-delete">
-                    <!-- <p>{{product.value}}</p>     Nient'altro che il numero di prodotti di quel tipo presente nel carrello -->
-
-                    <button class="buttons" (click)="substractProduct(product.key)" mat-raised-button color="accent">-</button>
-
-                    <button class="buttons" mat-raised-button color="accent">{{product.value}}</button>
-
-                    <button class="buttons" (click)="addProduct(product.key)" mat-raised-button color="accent">+</button>
-
-                    <button class="del-buttons" mat-mini-fab (click)="deleteProduct(product.key)">
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
-                <mat-divider></mat-divider>
             </div>
+            <div class="descrizione">
+                <div class="description">
+                        
+                    <div class="real-description">
+                        <p>{{product.key.getName()}}</p> <br>
+                        <p>{{product.key.getPrice()}} €</p>
+                    </div>
+
+                    <div class="quantity-delete">
+                        <!-- <p>{{product.value}}</p>     Nient'altro che il numero di prodotti di quel tipo presente nel carrello -->
+    
+                        <button class="buttons" (click)="substractProduct(product.key)" mat-raised-button color="accent">-</button>
+    
+                        <button class="buttons" mat-raised-button color="accent">{{product.value}}</button>
+    
+                        <button class="buttons" (click)="addProduct(product.key)" mat-raised-button color="accent">+</button>
+    
+                        <button class="del-buttons" mat-mini-fab (click)="deleteProduct(product.key)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
-    <div class="subtotal">
-        <p class="textSubtotal">TOTALE: {{calcSubtotal() | number : '1.0-2'}} $</p>  <!-- pipe per formattare a deguatamente i numeri visualizzati -->
+    <div class="destra">
+        <div class="subtotal">
+            <p class="textSubtotal">TOTALE </p> 
+            <p> {{calcSubtotal() | number : '1.0-2'}} €</p>  <!-- pipe per formattare adeguatamente i numeri visualizzati -->
+        </div>
     </div>
+
+
 </div>
+
+
 

@@ -3,62 +3,56 @@
     src: url('../../assets/Insanibc.ttf') format('truetype');
 }
 
-// :host {
-//     width: 35%;
-//     min-width: 300px;
-//     height: 100%;
-//     background-color: #d12028;
-//     // max-height: 500px;
-//     // height: 80vh;
-//     // background-color: orange;
-//     // border: solid black 4px;
-//     // display: block;
-//     display: flex;
-//     flex-direction: column;
-//     position: fixed;
-//     left: 0;
-//     top: 99px;
-// }
+
 
 .cart-container {
-    width: 35%;
-    min-width: 300px;
-    height: 481px;
-    // background-color: #d12028;
-    // max-height: 500px;
-    // height: 80vh;
-    // background-color: orange;
-    // border: solid black 4px;
-    // display: block;
-    overflow: auto;
-    // background-color: orange;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    position: fixed;
-    left: 0;
-    top: 99px;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+}
+
+.contenuto {
+    width: 50%;
+    min-width: 50%;
+    text-align: center;
+    background-color: orange;
+
 }
 
 .productContainer {
-    border: solid black 3px;
+    border-bottom: solid black 3px;
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: larger;
     font-weight: bold;
     line-height: 1rem;
+    margin-left: 0;
 }
 
-.description {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+.textTitle {
+    // margin-top: 50px;
+    font-family: "burgerFont";
+    font-size: 1.8rem;
+    color: white;
+    background-color: #d12028;
+    text-align: center;
 }
+
+// .description {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+// }
 
 .quantity-delete {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    // justify-content: space-around;
 }
 
 .del-buttons {
@@ -69,58 +63,47 @@
     color: white;
 }
 
-.container {
-    // width: 85%;
-    border-right: black solid 5px;
-    background-color: orange;
-}
 
-.title {
+// .title {
 
-    // display: inline;
-    height: 2.5em;
-    background-color: blue;
+//     // display: inline;
+//     height: 2.5em;
+//     background-color: blue;
 
-}
-
-.textTitle {
-    // margin-top: 50px;
-    font-family: "burgerFont";
-    font-size: 1.8rem;
-    color: white;
-    background-color: #d12028;
-    text-align: center;
-    border-right: black solid 5px;
+// }
+.subtotal{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    min-width: 50%;
 }
 
 .textSubtotal {
-    // margin-top: 50px;
+    
     font-family: "burgerFont";
     font-size: 1.8rem;
     color: white;
     background-color: #d12028;
     text-align: center;
-    border-right: black solid 5px;
-    border-bottom: black solid 5px;
 }
 
-.immagine-prodotto {
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+// .immagine-prodotto {
+//     height: 50%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
 
-img {
-    width: 90px;
-}
+// img {
+//     width: 90px;
+// }
 
-.subtotal {
+// .subtotal {
 
-    // display: inline;
-    // margin-top: 2rem;
-    height: 2.5em;
-    border-bottom: black solid 5px;
-    z-index: 1;
+//     // display: inline;
+//     // margin-top: 2rem;
+//     height: 2.5em;
+//     border-bottom: black solid 5px;
+//     z-index: 1;
 
-}
+// }
