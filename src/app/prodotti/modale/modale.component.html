@@ -1,5 +1,6 @@
 <h1 mat-dialog-title>{{data.prodotto.getName()}}</h1>
-<div mat-dialog-content id="descrizione">descrizione del prodotto</div>
+<div mat-dialog-content>{{data.prodotto.getDescription()}} </div>
+<!-- <div mat-dialog-content> {{data.prodotto.getPrezzo()}}</div> -->
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Close</button>
 </div>

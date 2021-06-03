@@ -13,7 +13,7 @@
         <!-- *ngFor crea per ogni elemento dentro l'array Mock_ElencoProdotti un div contenente tutto -->
         <div id="{{prodotto.getId()}}" class="div-prodotto" *ngFor="let prodotto of Mock_ElencoProdotti" (mouseenter)="changeToButton(prodotto)" (mouseleave)="changeToNormal(prodotto)"  >
 
-            <div class="div-immagine-prodotto" (click)="showDescription()">
+            <div class="div-immagine-prodotto" (click)="openDialog(prodotto)">
                 <img class="img-prodotto" [src]="prodotto.getBlob()" [alt]="prodotto.getName()">
             </div>
             <div class="div-nome-button-aggiungi-prodotto" (click)="aggiungiSuCarrello(prodotto)">

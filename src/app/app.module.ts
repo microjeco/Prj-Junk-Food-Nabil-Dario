@@ -19,7 +19,6 @@ import { InstagramShareComponent } from './footer/instagram-share/instagram-shar
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { CartComponent } from './cart/cart.component';
-import { TemplateModal } from './prodotti/prodotti.component'
  
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,6 +29,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatBadgeModule } from '@angular/material/badge';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ModaleComponent } from './prodotti/modale/modale.component';
 
 
  
@@ -50,7 +50,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     SideNavComponent,
     ProdottiComponent,
     CartComponent,
-    TemplateModal
+    ModaleComponent
   ],
   imports: [
     BrowserModule,

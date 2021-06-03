@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PRODOTTI } from '../Mock_elencoProdotti';
 import { CATEGORIE } from '../Mock_categorieProdotti';
 import { Prodotto } from '../shared/Prodotto';
 import { ShoppingCartService } from '../services/shopping-cart.service'
 import {MatDialog} from '@angular/material/dialog';
+import { ModaleComponent } from './modale/modale.component';
+
 
 @Component({
   selector: 'app-prodotti',
@@ -83,8 +85,9 @@ export class ProdottiComponent implements OnInit {
 
   }
 
-  showDescription() {
-    this.modal.open(TemplateModal);
+  openDialog(prodotto: Prodotto) {
+    this.modal.open(ModaleComponent, {data: {prodotto : prodotto}});
+    
   }
 
   
@@ -98,23 +101,5 @@ export class ProdottiComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
-}
-
-@Component({
-  selector: 'template-modale',
-  templateUrl: 'template-modale.html',
-})
-
-export class TemplateModal {
-  constructor(){
-    
-  }
-
-  // seeDescription(prodotto: Prodotto) {
-  //   let divMatDialogContent = document.getElementById("descrizione") as HTMLDivElement;
-  //   divMatDialogContent.textContent = prodotto.getDescription();
-
-  // }
 
 }
