@@ -12,16 +12,17 @@ export class NavBarComponent implements OnInit {
 
   productIntoCart : number = 0;
 
-  constructor(private cartService : ShoppingCartService, private messageService: MessageService) {
+  constructor(private cartService : ShoppingCartService) {
 
     // this.productIntoCart = this.cartService.getCartInstance().getTotProdotti();
     // console.log("funzione in navbar: " + this.productIntoCart);
 
   }
 
+  //mi sottoscrivo al soggetto che viene ritornato come observable
   ngOnInit(): void {
-    this.messageService.recivedMessage().subscribe((d)=>{
-      this.productIntoCart = d;
+    this.cartService.getCartInstance().recivedMessage().subscribe((valore)=>{
+      this.productIntoCart = valore;
     })
   }
 

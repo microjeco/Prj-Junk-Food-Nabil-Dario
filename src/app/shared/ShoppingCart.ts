@@ -1,3 +1,6 @@
+import { Subject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { MessageService } from '../message.service';
 import { Prodotto } from './Prodotto';
 
 export class ShoppingCart {
@@ -13,8 +16,7 @@ export class ShoppingCart {
   //  =  <prodotto1, 2>, <prodotto2, 1>, <prodotto3, 6>, <prodotto4, 4>, <prodotto5, 1>
 
   //Metodo che aggiunge un prodotto al carrello
-  totProdotti : number = 0;
-
+  
   addToCart(product : Prodotto) {
     
     if(this.productMap.has(product)) {
@@ -26,17 +28,26 @@ export class ShoppingCart {
       this.productMap.set(product, 1);
     }
     
-    this.totProdotti = this.totProdotti + 1;
-    console.log("contatore totale = " + this.totProdotti);
+    
+    
+    this.sendMessage(this.getTotProdotti())
     
   }
-
+  
   //Prendo il numero totale dei prodotti nel carrello
+  totProdotti : number = 0;
+
   getTotProdotti() : number{
 
+    this.totProdotti = 0;
+    for (const value of this.productMap.values()) {
+      this.totProdotti = this.totProdotti + value;
+    }
     return this.totProdotti;
 
   }
+
+  
 
   //Ritorna il numero esatto di un determinato prodotto all'interno del carrello
   getProductCount(product : Prodotto) : number {
@@ -58,6 +69,7 @@ export class ShoppingCart {
     this.productMap.delete(product);
     console.log("rimosso un prodotto");
     // this.productMap.splice(this.productMap.indexOf(prodotto), 1);
+    this.sendMessage(this.getTotProdotti())
   }
 
   //Sottrae un solo tipo di prodotto, 
@@ -74,8 +86,8 @@ export class ShoppingCart {
       console.log("Elemento undefined, prodotto inesistente");
     }
 
-    this.totProdotti = this.totProdotti - 1;
-    console.log("contatore totale = " + this.totProdotti);
+    
+    this.sendMessage(this.getTotProdotti())
 
   }
 
@@ -106,4 +118,16 @@ export class ShoppingCart {
 
     return array;
   } 
+
+  //creo attributo subject di tipo Subject che come tipo di valore è number
+  private subject = new Subject<number>();
+
+
+  sendMessage(message:number){
+    this.subject.next(message)
+  }
+
+  recivedMessage():Observable<number>{
+    return this.subject.asObservable();
+  }
 }

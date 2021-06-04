@@ -2,6 +2,7 @@ import { ShoppingCartService } from './../services/shopping-cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Prodotto } from '../shared/Prodotto';
 
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -47,11 +48,16 @@ export class CartComponent implements OnInit {
 
   }
 
+  numeroProdotti(){
+
+  }
+
   //Calcola il totale, ogni volta che viene richiamata, andando a sommare i prezzi dei prodotti presenti nell'array (MAP?) products
   calcSubtotal() : number {
 
     return this.cartService.getCartInstance().getSubtotal();
 
   }
+
 
 }
