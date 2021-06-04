@@ -7,7 +7,11 @@
         </div>
 
         <div *ngIf="productsCount === 0; then thenBlock"></div>
-            <ng-template #thenBlock>CART IS EMPTY </ng-template>
+        
+            <ng-template #thenBlock >
+                <label class="empty"> CART IS EMPTY </label>
+            </ng-template>
+       
         <div class="prodotto" *ngFor="let product of products | keyvalue">
 
             <div class="foto">
@@ -48,6 +52,9 @@
         <div class="subtotal">
             <p class="textSubtotal">TOTALE </p> 
             <p> {{calcSubtotal() | number : '1.0-2'}} €</p>  <!-- pipe per formattare adeguatamente i numeri visualizzati -->
+        </div>
+        <div class="acquista">
+            ACQUISTA ORA
         </div>
         <div class="payment-options">
             <div class="payment-options-text">

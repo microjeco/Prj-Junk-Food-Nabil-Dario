@@ -94,7 +94,7 @@ export class ProdottiComponent implements OnInit {
 
 
   aggiungiSuCarrello(prodotto : Prodotto){
-    alert("ho aggiunto a carrello!");
+    // alert("ho aggiunto a carrello!");
     this.cartService.getCartInstance().addToCart(prodotto);
   }
 
