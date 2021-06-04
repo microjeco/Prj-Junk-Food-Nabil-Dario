@@ -13,8 +13,10 @@ export class ShoppingCart {
   //  =  <prodotto1, 2>, <prodotto2, 1>, <prodotto3, 6>, <prodotto4, 4>, <prodotto5, 1>
 
   //Metodo che aggiunge un prodotto al carrello
-  addToCart(product : Prodotto) {
+  totProdotti : number = 0;
 
+  addToCart(product : Prodotto) {
+    
     if(this.productMap.has(product)) {
       this.productMap.set(product, this.getProductCount(product) + 1);
       console.log("aggiunto un prodotto che già era presente");
@@ -23,6 +25,17 @@ export class ShoppingCart {
       console.log("nuovo prodotto");
       this.productMap.set(product, 1);
     }
+    
+    this.totProdotti = this.totProdotti + 1;
+    console.log("contatore totale = " + this.totProdotti);
+    
+  }
+
+  //Prendo il numero totale dei prodotti nel carrello
+  getTotProdotti() : number{
+
+    return this.totProdotti;
+
   }
 
   //Ritorna il numero esatto di un determinato prodotto all'interno del carrello
@@ -60,6 +73,10 @@ export class ShoppingCart {
     else {   //Se il prodotto non esiste, anche se in realtà non dovrebbe mai essere possibile un acosa del genere
       console.log("Elemento undefined, prodotto inesistente");
     }
+
+    this.totProdotti = this.totProdotti - 1;
+    console.log("contatore totale = " + this.totProdotti);
+
   }
 
   //Nuovo funzione minus

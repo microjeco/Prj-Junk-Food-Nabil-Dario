@@ -13,7 +13,8 @@ export class CartComponent implements OnInit {
   subtotal : number;
   productsCount : number;
 
-  //Ad ogni caricamento della pagina va ad aggiungere all'array products i prodotti effettivamente all'interno della classe ShoppingCart
+  //Ad ogni caricamento della pagina va ad aggiungere all'array products i prodotti effettivamente 
+  // all'interno della classe ShoppingCart
   constructor(private cartService : ShoppingCartService) {
     //this.cartService.getCartInstance().addToCart(Math.random());
     this.products = this.cartService.getCartInstance().getProducts();

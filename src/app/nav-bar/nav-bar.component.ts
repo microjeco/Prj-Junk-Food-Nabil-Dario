@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from '../message.service';
 import { ShoppingCartService } from '../services/shopping-cart.service'
 import { Prodotto } from '../shared/Prodotto';
 
@@ -9,16 +10,19 @@ import { Prodotto } from '../shared/Prodotto';
 })
 export class NavBarComponent implements OnInit {
 
-  productIntoCart : number;
+  productIntoCart : number = 0;
 
-  constructor(private cartService : ShoppingCartService) {
+  constructor(private cartService : ShoppingCartService, private messageService: MessageService) {
 
-    this.productIntoCart = this.cartService.getCartInstance().getProducts().size;
-    console.log(this.productIntoCart);
+    // this.productIntoCart = this.cartService.getCartInstance().getTotProdotti();
+    // console.log("funzione in navbar: " + this.productIntoCart);
 
   }
 
   ngOnInit(): void {
+    this.messageService.recivedMessage().subscribe((d)=>{
+      this.productIntoCart = d;
+    })
   }
 
   changeToBlood() {
@@ -39,21 +43,6 @@ export class NavBarComponent implements OnInit {
     this.cartService.getCartInstance().addToCart(prodotto);
 
   }
-
-
-  // showSideNav() {
-
-  // }
-
-  /*//Nel momento in cui l'utente aggiunge al carrello un prodotto richiama questa funzione la quale visualizza il badge sull'icona carrello
-    toggleCartBadge() {
-
-
-
-    }
-  
-  */
-
 
 
 }
